@@ -1,6 +1,7 @@
 # Creditbook
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.4.
+Petit projet pour s'exercer à Angular, NodeJs et MongoDB.
+Une vraie description viendra plus tard.
 
 ## Development server
 
