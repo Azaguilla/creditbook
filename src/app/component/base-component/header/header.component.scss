@@ -1,0 +1,13 @@
+.credibook-header {
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.479);
+    font-size: 1.2rem;
+
+    .mat-toolbar {
+        background-color: #8cd0de;
+    }
+
+    & span {
+        font-weight: 600;
+        color: white;
+    }
+}
