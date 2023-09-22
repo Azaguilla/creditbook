@@ -3,13 +3,10 @@
 Petit projet pour s'exercer à Angular, NodeJs et MongoDB.
 Une vraie description viendra plus tard.
 
-## Pour lancer le backend NodeJs
+## Pour lancer le backend NodeJs en dev
 
-Run `nodemon server`.
-
-## Development server
-
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Run `npm run backend-dev` pour lancer le backend NodeJs en dev.
+Run `npm run frontend-dev` pour lancer le frontend NodeJs en dev.
 
 ## Code scaffolding
 
