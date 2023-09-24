@@ -15,7 +15,7 @@ export class RegisterComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onREgoster() {
+  onRegister() {
     this.authSrv.login('admin', 'test');
   }
 }
