@@ -11,6 +11,7 @@ export class AuthGuardService implements CanActivate {
   }
 
   /**
+   * Méthode permettant de vérifier que l'utilisateur est connecté
    * Si l'authentification n'est pas effectuée, on redirige l'utilisateur vers la page de connexion
    */
   canActivate() {

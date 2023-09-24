@@ -13,6 +13,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { AuthenticationModule } from './component/authentication/authentication.module';
 
+import {MatIconModule} from '@angular/material/icon';
+import {MatSnackBarModule} from '@angular/material/snack-bar'
+
 @NgModule({
   declarations: [
     HomePageComponent,
@@ -28,7 +31,9 @@ import { AuthenticationModule } from './component/authentication/authentication.
     BrowserAnimationsModule,
     MatToolbarModule,
     AuthenticationModule,
-    HttpClientModule
+    HttpClientModule,
+    MatIconModule,
+    MatSnackBarModule
     ],
   providers: [],
   bootstrap: [AppComponent]

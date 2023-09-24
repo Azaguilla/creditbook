@@ -5,18 +5,22 @@ const User = require("../models/user.model");
 exports.signup = (req, res, next) => {
     bcrypt.hash(req.body.password, 10)
       .then(async (hash) => {
-        const user = new User({
-          username: req.body.username,
-          password: hash
-        });
+        User.findOne({username : req.body.username}, async (err, user2) => {
+          const user = new User({
+            username: req.body.username,
+            password: hash
+          });
+          
+          if (user2) return res.status(500).json({ message : 'Le nom d\'utilisateur existe déjà.' });
 
-        try {
-           await user.save();
-           token = user.generateJwt();
-           res.status(200).json({ userId: user._id, token});
-        } catch (e) {
-            res.status(500).json({ e });
-        }
+          try {
+            await user.save();
+            token = user.generateJwt();
+            res.status(200).json({ userId: user._id, token});
+          } catch (e) {
+            res.status(500).json({ message : 'Une erreur est survenue.' });
+          }
+        })
     });
   };
 
@@ -32,7 +36,7 @@ exports.signup = (req, res, next) => {
     
         // If a user is found
         if (!user) {
-            return res.status(401).json({ message: 'Le login ou le mot de passe est incorrect'});
+            return res.status(401).json({ message: 'Le login ou le mot de passe est incorrect.'});
         }
         token = user.generateJwt();
         res.status(200).json({ userId: user._id, token});
