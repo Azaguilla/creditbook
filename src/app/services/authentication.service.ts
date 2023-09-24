@@ -30,10 +30,10 @@ export class AuthenticationService {
   async login(login: string, password: string) {    
     this.http.post<any>('http://localhost:3000/api/auth/login', { username: login, password } ).subscribe((res) => {
       console.log(res);
-      
+      if (res.token) {
+        this.saveToken(res.token);
+      }
     });
-
-    this.token = 'MyFakeToken';
   }
 
   private saveToken(token: string): void {
@@ -72,6 +72,6 @@ export class AuthenticationService {
   public logout(): void {
     this.token = '';
     window.localStorage.removeItem('glossaire-token');
-    this.router.navigateByUrl('/');
+    this.router.navigateByUrl('/auth/login');
   }
 }

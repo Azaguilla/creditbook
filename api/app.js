@@ -4,6 +4,8 @@ const express = require('express');
 const mongoose = require('mongoose');
 const userRoutes = require('./routes/user.route');
 const path = require('path');
+const passport = require('passport');
+require('./middleware/passport');
 
 //********* REQUIRED **********/
 
@@ -34,6 +36,8 @@ app.use((req, res, next) => {
 /******** headers *********/
 
 app.use('/images', express.static(path.join(__dirname, 'images'))); // on indique qu'il faut gérer la ressource images de manière statique à chaque fois qu'elle reçoit une requete vers la route /images
+// On initialise passport (pour la connexion des utilisateurs
+app.use(passport.initialize());
 
 /**************************/
 /******** ROUTES **********/
