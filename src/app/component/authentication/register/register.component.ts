@@ -16,6 +16,6 @@ export class RegisterComponent implements OnInit {
   }
 
   onRegister() {
-    this.authSrv.login('admin', 'test');
+    this.authSrv.register('admin2', 'test2');
   }
 }

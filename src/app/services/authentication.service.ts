@@ -29,7 +29,14 @@ export class AuthenticationService {
 
   async login(login: string, password: string) {    
     this.http.post<any>('http://localhost:3000/api/auth/login', { username: login, password } ).subscribe((res) => {
-      console.log(res);
+      if (res.token) {
+        this.saveToken(res.token);
+      }
+    });
+  }
+
+  async register(login: string, password: string) {    
+    this.http.post<any>('http://localhost:3000/api/auth/signup', { username: login, password } ).subscribe((res) => {
       if (res.token) {
         this.saveToken(res.token);
       }
