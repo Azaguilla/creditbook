@@ -6,15 +6,21 @@ import { StatistiqueComponent } from './component/statistique/statistique.compon
 import { AuthGuardService } from './services/auth.gard.service';
 
 const routes: Routes = [
-  { path: 'credits', component: CreditComponent, canActivate: [AuthGuardService] }, 
-  { path: 'statistiques', component: StatistiqueComponent, canActivate: [AuthGuardService] },
-  { path: '', component: HomePageComponent, canActivate: [AuthGuardService] }
+  {
+    path: 'credits',
+    component: CreditComponent,
+    canActivate: [AuthGuardService],
+  },
+  {
+    path: 'statistiques',
+    component: StatistiqueComponent,
+    canActivate: [AuthGuardService],
+  },
+  { path: '', component: HomePageComponent, canActivate: [AuthGuardService] },
 ];
-
-
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

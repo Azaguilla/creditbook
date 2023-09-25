@@ -3,11 +3,10 @@ import { AuthenticationService } from 'src/app/services/authentication.service';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.scss']
+  styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent {
-
-  constructor(private authenticationSrv: AuthenticationService) { }
+  constructor(private authenticationSrv: AuthenticationService) {}
 
   /**
    * Méthode permettant la déconnexion de l'utilisateur
@@ -15,5 +14,4 @@ export class HeaderComponent {
   onLogout() {
     this.authenticationSrv.logout();
   }
-
 }

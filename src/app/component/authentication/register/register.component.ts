@@ -6,7 +6,7 @@ import { AuthenticationService } from 'src/app/services/authentication.service';
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
-  styleUrls: ['./register.component.scss']
+  styleUrls: ['./register.component.scss'],
 })
 export class RegisterComponent implements OnInit {
   /**
@@ -14,14 +14,16 @@ export class RegisterComponent implements OnInit {
    */
   registerForm!: FormGroup;
 
-  constructor(private authSrv: AuthenticationService,
+  constructor(
+    private authSrv: AuthenticationService,
     private formBuilder: FormBuilder,
-    private snackBar: MatSnackBar) { }
+    private snackBar: MatSnackBar,
+  ) {}
 
   ngOnInit(): void {
     this.registerForm = this.formBuilder.group({
       username: [null, [Validators.required]],
-      password: [null, [Validators.required]]
+      password: [null, [Validators.required]],
     });
   }
 
@@ -29,13 +31,16 @@ export class RegisterComponent implements OnInit {
    * Méthode lancée lors de la soumission du formulaire
    */
   onSubmit() {
-    if (this.registerForm.valid){
+    if (this.registerForm.valid) {
       const password = this.registerForm.value.password;
       const login = this.registerForm.value.username;
-      
+
       this.authSrv.register(login, password);
     } else {
-      this.snackBar.open('Veuillez renseigner un identifiant et un mot de passe.', 'Fermer');
+      this.snackBar.open(
+        'Veuillez renseigner un identifiant et un mot de passe.',
+        'Fermer',
+      );
     }
   }
 }

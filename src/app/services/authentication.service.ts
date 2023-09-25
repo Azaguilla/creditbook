@@ -1,10 +1,10 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import {MatSnackBar } from '@angular/material/snack-bar'
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { catchError } from 'rxjs/operators';
 import { EMPTY } from 'rxjs';
-import { HttpAuthResponse } from '../models/response.model'
+import { HttpAuthResponse } from '../models/response.model';
 
 /**
  * Représente les informations d'un utilisateur connecté
@@ -17,7 +17,7 @@ export interface UserDetails {
 }
 
 /**
- * Représente les crédentials de l'utilisateur 
+ * Représente les crédentials de l'utilisateur
  */
 export interface TokenPayload {
   username: string;
@@ -25,10 +25,9 @@ export interface TokenPayload {
 }
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class AuthenticationService {
-
   /**
    * Le token de l'utilisateur connecté
    */
@@ -39,18 +38,30 @@ export class AuthenticationService {
    */
   private uri = 'http://localhost:3000';
 
-  constructor(private http: HttpClient, private router: Router, private snackBar: MatSnackBar) {}
+  constructor(
+    private http: HttpClient,
+    private router: Router,
+    private snackBar: MatSnackBar,
+  ) {}
 
   /**
    * Méthode permettant de se connecter à l'appli
-   * @param login 
-   * @param password 
+   * @param login
+   * @param password
    */
   login(login: string, password: string): void {
-      this.http.post<HttpAuthResponse>(`${this.uri}/api/auth/login`, { username: login, password } ).pipe(catchError((err, caught) =>  {
-        this.snackBar.open(err.error.message, 'Fermer');
-        return EMPTY;
-      })).subscribe((res) => {
+    this.http
+      .post<HttpAuthResponse>(`${this.uri}/api/auth/login`, {
+        username: login,
+        password,
+      })
+      .pipe(
+        catchError((err, caught) => {
+          this.snackBar.open(err.error.message, 'Fermer');
+          return EMPTY;
+        }),
+      )
+      .subscribe((res) => {
         if (res.token) {
           this.saveToken(res.token);
           this.router.navigateByUrl('/');
@@ -60,24 +71,32 @@ export class AuthenticationService {
 
   /**
    * Méthode permettant de s'inscrire à l'appli
-   * @param login 
-   * @param password 
+   * @param login
+   * @param password
    */
-  register(login: string, password: string): void {    
-    this.http.post<HttpAuthResponse>(`${this.uri}/api/auth/signup`, { username: login, password } ).pipe(catchError((err, caught) =>  {
-      this.snackBar.open(err.error.message, 'Fermer');
-      return EMPTY;
-    })).subscribe((res) => {
-      if (res.token) {
-        this.saveToken(res.token);
-        this.router.navigateByUrl('/');
-      }
-    });
+  register(login: string, password: string): void {
+    this.http
+      .post<HttpAuthResponse>(`${this.uri}/api/auth/signup`, {
+        username: login,
+        password,
+      })
+      .pipe(
+        catchError((err, caught) => {
+          this.snackBar.open(err.error.message, 'Fermer');
+          return EMPTY;
+        }),
+      )
+      .subscribe((res) => {
+        if (res.token) {
+          this.saveToken(res.token);
+          this.router.navigateByUrl('/');
+        }
+      });
   }
 
   /**
    * Méthode permettant d'enregostrer le token dans le localStorage du navigateur
-   * @param token 
+   * @param token
    */
   private saveToken(token: string): void {
     localStorage.setItem('creditbook-token', token);
@@ -86,7 +105,7 @@ export class AuthenticationService {
 
   /**
    * Méthoide permettant de récupérer les données de l'utilisateur connecté
-   * @returns 
+   * @returns
    */
   getUserDetails(): UserDetails | null {
     const token = this.getToken();
@@ -96,13 +115,13 @@ export class AuthenticationService {
       // atob est utilisé pour décoder le token
       payload = window.atob(payload);
       return JSON.parse(payload);
-    } else return null
+    } else return null;
   }
 
-/**
- * Méthode permettant de récupérer le token de l'utilisateur connecté au sein du localStorage de l'utilisateur
- * @returns 
- */
+  /**
+   * Méthode permettant de récupérer le token de l'utilisateur connecté au sein du localStorage de l'utilisateur
+   * @returns
+   */
   getToken(): string {
     if (!this.token) {
       this.token = localStorage.getItem('creditbook-token') ?? '';
@@ -112,7 +131,7 @@ export class AuthenticationService {
 
   /**
    * Méthode permettant de savoir si l'utilisateur est connecté
-   * @returns 
+   * @returns
    */
   public isLoggedIn(): boolean {
     const user = this.getUserDetails();
