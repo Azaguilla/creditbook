@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -9,7 +10,9 @@ import { CreditComponent } from './component/credit/credit.component';
 import { HomePageComponent } from './component/home-page/home-page.component';
 import { StatistiqueComponent } from './component/statistique/statistique.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatToolbarModule} from '@angular/material/toolbar';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { AuthenticationModule } from './component/authentication/authentication.module';
+
 
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatIconModule} from '@angular/material/icon';
@@ -30,10 +33,12 @@ import { AngularFontAwesomeModule } from 'angular-font-awesome';
     AppRoutingModule,
     BrowserAnimationsModule,
     MatToolbarModule,
+    AuthenticationModule,
+    HttpClientModule,
     MatIconModule,
     MatSnackBarModule,
     AngularFontAwesomeModule
-  ],
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })
