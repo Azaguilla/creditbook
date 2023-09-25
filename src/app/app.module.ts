@@ -11,6 +11,11 @@ import { StatistiqueComponent } from './component/statistique/statistique.compon
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatToolbarModule} from '@angular/material/toolbar';
 
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+import {MatIconModule} from '@angular/material/icon';
+import { AngularFontAwesomeModule } from 'angular-font-awesome';
+
+
 @NgModule({
   declarations: [
     HomePageComponent,
@@ -24,7 +29,10 @@ import {MatToolbarModule} from '@angular/material/toolbar';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MatToolbarModule
+    MatToolbarModule,
+    MatIconModule,
+    MatSnackBarModule,
+    AngularFontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
