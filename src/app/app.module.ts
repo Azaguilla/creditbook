@@ -13,9 +13,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { AuthenticationModule } from './component/authentication/authentication.module';
 
-import { MatIconModule } from '@angular/material/icon';
-import { MatSnackBarModule } from '@angular/material/snack-bar';
-import { CustomSnackbarComponent } from './component/base-component/custom-snackbar/custom-snackbar.component';
+
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+import {MatIconModule} from '@angular/material/icon';
+import { AngularFontAwesomeModule } from 'angular-font-awesome';
+
 
 @NgModule({
   declarations: [
@@ -25,7 +27,6 @@ import { CustomSnackbarComponent } from './component/base-component/custom-snack
     FooterComponent,
     CreditComponent,
     StatistiqueComponent,
-    CustomSnackbarComponent,
   ],
   imports: [
     BrowserModule,
@@ -36,7 +37,8 @@ import { CustomSnackbarComponent } from './component/base-component/custom-snack
     HttpClientModule,
     MatIconModule,
     MatSnackBarModule,
-  ],
+    AngularFontAwesomeModule
+    ],
   providers: [],
   bootstrap: [AppComponent],
 })
