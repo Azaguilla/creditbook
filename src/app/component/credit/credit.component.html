@@ -1,24 +1,23 @@
 <div id="credit-body">
-    <h2><mat-icon>savings</mat-icon><div>Vos Crédits</div></h2>
+    <h2><mat-icon id="savings-icon">savings</mat-icon><div>Vos Crédits</div></h2>
         <p id="credits">
             {{creditNumber}}
         </p>
     <h3>Créditer</h3>
         <div id = "crediter">
-            <button (click)="onCredit(5)"><mat-icon >book</mat-icon><p>Roman</p></button>
-            <button (click)="onCredit(5)"><mat-icon >book</mat-icon><p>Roman</p></button>
-            <button (click)="onCredit(3)"><mat-icon >tsunami</mat-icon><p>Manga</p></button>
-            <button (click)="onCredit(3)"><mat-icon >square</mat-icon><p>BD</p></button>
-            <button (click)="onCredit(4)"><mat-icon >image</mat-icon><p>Roman graphique</p></button>
-            <button (click)="onCredit(2)"><mat-icon >file</mat-icon><p>Document</p></button>
+            <button (click)="onCredit(5)"><mat-icon class="button-icon">book</mat-icon><p class="button-name">Roman</p></button>
+            <button (click)="onCredit(3)"><mat-icon class="button-icon">tsunami</mat-icon><p class="button-name">Manga</p></button>
+            <button (click)="onCredit(3)"><mat-icon class="button-icon">chat_bubble</mat-icon><p class="button-name">BD</p></button>
+            <button (click)="onCredit(4)"><mat-icon class="button-icon">image</mat-icon><p class="button-name">Roman graphique</p></button>
+            <button (click)="onCredit(2)"><mat-icon class="button-icon">description</mat-icon><p class="button-name">Document</p></button>
         </div>
 
     <h3>Débiter</h3>
         <div id = "debiter">
-            <button (click)="onDebit(5)"><mat-icon >book</mat-icon>Roman</button>
-            <button (click)="onDebit(3)"><mat-icon >tsunami</mat-icon>Manga</button>
-            <button (click)="onDebit(3)"><mat-icon >square</mat-icon>BD</button>
-            <button (click)="onDebit(4)"><mat-icon >image</mat-icon>Roman graphique</button>
-            <button (click)="onDebit(2)"><mat-icon >file</mat-icon>Document</button>
+            <button (click)="onDebit(5)"><mat-icon class="button-icon">book</mat-icon><p class="button-name">Roman</p></button>
+            <button (click)="onDebit(3)"><mat-icon class="button-icon">tsunami</mat-icon><p class="button-name">Manga</p></button>
+            <button (click)="onDebit(3)"><mat-icon class="button-icon">chat_bubble</mat-icon><p class="button-name">BD</p></button>
+            <button (click)="onDebit(4)"><mat-icon class="button-icon">image</mat-icon><p class="button-name">Roman graphique</p></button>
+            <button (click)="onDebit(2)"><mat-icon class="button-icon">description</mat-icon><p class="button-name">Document</p></button>
         </div>    
 </div>

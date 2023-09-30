@@ -21,18 +21,46 @@ h3{
 
 div#crediter, #debiter{
     display : flex;
-    align-items: center;
-    justify-content: space-between;
     width: 70%;
 }
 
 button{
     display: flex;
     flex-direction: column;
-
+    align-items: center;
+    border: none;
+    background:none;
+    cursor: pointer;
+    width: 70%;
 }
 
-mat-icon{
+mat-icon#savings-icon{
     margin: 0.3rem 1rem 0 0;
 }
 
+mat-icon.button-icon{
+    margin-bottom: 0.5rem;
+    background-color: rgb(218, 217, 217);
+    padding: 1rem;
+    border-radius: 18px;
+}
+
+p#credits {
+    font-size: 3.5rem;
+    border: none;
+    padding: 3rem 3rem;
+    box-shadow: 5px 5px 12px rgba(0, 0, 0, 0.274);
+    border-radius: 22px;
+    margin-top: 1rem;
+    background: rgb(140, 208, 222);
+    background: linear-gradient(
+      90deg,
+      rgba(140, 208, 222, 1) 0%,
+      rgba(136, 234, 196, 1) 100%
+    );
+  }
+
+
+  p.button-name{
+    color:rgb(122, 122, 122);
+  }

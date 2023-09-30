@@ -1,5 +1,6 @@
 import { Component, OnInit, inject } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { CustomSnackbarService } from 'src/app/services/custom-snackbar.service';
 
 
 @Component({
@@ -12,7 +13,7 @@ export class CreditComponent implements OnInit {
   creditNumber!: number;
 
 
-  constructor(private _snackBar: MatSnackBar) {
+  constructor(private readonly snackbarService: CustomSnackbarService) {
   }
 
   ngOnInit(): void {
@@ -27,7 +28,7 @@ export class CreditComponent implements OnInit {
     if (this.creditNumber>=removeCredit){
       this.creditNumber -= removeCredit;
     } else {
-        this._snackBar.open("Pas assez de crédits !", "Fermer")
+        this.snackbarService.warning("Pas assez de crédits !")
     }
   }
 
