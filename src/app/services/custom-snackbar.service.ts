@@ -9,13 +9,24 @@ export class CustomSnackbarService {
 
   constructor(private _snackBar: MatSnackBar) {}
 
-  success(message: string, action: string) {
-    this._snackBar.openFromComponent(CustomSnackbarService, {
+  success(message: string, action = "Fermer") {
+    this._snackBar.open(message, action, {
       duration: this.durationInSeconds * 1000,
+      panelClass: ['snackbar', 'snackbar-success']
     });
   }
 
-  warning(message: string, action: string) {}
+  warning(message: string, action = "Fermer") {
+    this._snackBar.open(message, action, {
+      duration: this.durationInSeconds * 1000,
+      panelClass: ['snackbar', 'snackbar-warning']
+    });
+  }
 
-  error(message: string, action: string) {}
+  error(message: string, action = "Fermer") {
+    this._snackBar.open(message, action, {
+      duration: this.durationInSeconds * 1000,
+      panelClass: ['snackbar', 'snackbar-error']
+    });
+  }
 }

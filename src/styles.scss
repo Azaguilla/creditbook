@@ -9,6 +9,26 @@ body {
   font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
-* {
-  color: rgb(29, 29, 29);
+// POUR LES SNACKBAR DU SNACKBAR SERVICE
+
+.mat-snack-bar-container {
+  font-size: 1.2em;
+  color: white;
+}
+
+.mat-simple-snackbar-action {
+  font-size: 0.9em;
+  color: white;
+}
+
+.snackbar-error {
+  background-color: #e64545;
+}
+
+.snackbar-success {
+  background-color: #368e3f;
+}
+
+.snackbar-warning {
+  background-color: #ee7e06;
 }

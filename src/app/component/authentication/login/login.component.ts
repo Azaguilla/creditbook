@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthenticationService } from '../../../services/authentication.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { MatSnackBar } from '@angular/material/snack-bar';
+import { CustomSnackbarService } from 'src/app/services/custom-snackbar.service';
 
 @Component({
   selector: 'app-login',
@@ -17,7 +17,7 @@ export class LoginComponent implements OnInit {
   constructor(
     private authSrv: AuthenticationService,
     private formBuilder: FormBuilder,
-    private snackBar: MatSnackBar,
+    private readonly snackBarSrv: CustomSnackbarService,
   ) {}
 
   ngOnInit(): void {
@@ -37,10 +37,7 @@ export class LoginComponent implements OnInit {
 
       this.authSrv.login(login, password);
     } else {
-      this.snackBar.open(
-        'Veuillez renseigner un identifiant et un mot de passe.',
-        'Fermer',
-      );
+      this.snackBarSrv.error('Veuillez renseigner un identifiant et un mot de passe.');
     }
   }
 }
