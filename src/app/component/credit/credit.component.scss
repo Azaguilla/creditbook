@@ -1,0 +1,38 @@
+
+div#credit-body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 70%;
+    margin:auto;
+}
+
+h2{
+    margin: 4rem;
+    display : flex;
+    align-self: flex-start;
+}
+
+h3{
+    margin: 2rem;
+    display : flex;
+    align-self: flex-start;
+}
+
+div#crediter, #debiter{
+    display : flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 70%;
+}
+
+button{
+    display: flex;
+    flex-direction: column;
+
+}
+
+mat-icon{
+    margin: 0.3rem 1rem 0 0;
+}
+

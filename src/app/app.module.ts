@@ -16,7 +16,6 @@ import { AuthenticationModule } from './component/authentication/authentication.
 
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatIconModule} from '@angular/material/icon';
-import { AngularFontAwesomeModule } from 'angular-font-awesome';
 
 
 @NgModule({
@@ -37,7 +36,6 @@ import { AngularFontAwesomeModule } from 'angular-font-awesome';
     HttpClientModule,
     MatIconModule,
     MatSnackBarModule,
-    AngularFontAwesomeModule
     ],
   providers: [],
   bootstrap: [AppComponent],

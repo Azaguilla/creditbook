@@ -1,23 +1,24 @@
 <div id="credit-body">
-    <h2>Vos Crédits</h2>
+    <h2><mat-icon>savings</mat-icon><div>Vos Crédits</div></h2>
         <p id="credits">
             {{creditNumber}}
         </p>
-    <h3><mat-icon>savings</mat-icon>Créditer</h3>
+    <h3>Créditer</h3>
         <div id = "crediter">
-            <button (click)="onCredit(5)"><fa-icon [icon]="faBook"></fa-icon>Roman</button>
-            <button (click)="onCredit(3)"><mat-icon >tsunami</mat-icon>Manga</button>
-            <button (click)="onCredit(3)"><mat-icon >square</mat-icon>BD</button>
-            <button (click)="onCredit(4)"><mat-icon >image</mat-icon>Roman graphique</button>
-            <button (click)="onCredit(2)"><mat-icon >file</mat-icon>Document</button>
+            <button (click)="onCredit(5)"><mat-icon >book</mat-icon><p>Roman</p></button>
+            <button (click)="onCredit(5)"><mat-icon >book</mat-icon><p>Roman</p></button>
+            <button (click)="onCredit(3)"><mat-icon >tsunami</mat-icon><p>Manga</p></button>
+            <button (click)="onCredit(3)"><mat-icon >square</mat-icon><p>BD</p></button>
+            <button (click)="onCredit(4)"><mat-icon >image</mat-icon><p>Roman graphique</p></button>
+            <button (click)="onCredit(2)"><mat-icon >file</mat-icon><p>Document</p></button>
         </div>
 
     <h3>Débiter</h3>
         <div id = "debiter">
-            <button (click)="onDebit(5)">Roman</button>
-            <button (click)="onDebit(3)">Manga</button>
-            <button (click)="onDebit(3)">BD</button>
-            <button (click)="onDebit(4)">Roman graphique</button>
-            <button (click)="onDebit(2)">Document</button>
+            <button (click)="onDebit(5)"><mat-icon >book</mat-icon>Roman</button>
+            <button (click)="onDebit(3)"><mat-icon >tsunami</mat-icon>Manga</button>
+            <button (click)="onDebit(3)"><mat-icon >square</mat-icon>BD</button>
+            <button (click)="onDebit(4)"><mat-icon >image</mat-icon>Roman graphique</button>
+            <button (click)="onDebit(2)"><mat-icon >file</mat-icon>Document</button>
         </div>    
 </div>

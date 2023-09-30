@@ -1,6 +1,6 @@
 import { Component, OnInit, inject } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { faBook } from '@fortawesome/free-solid-svg-icons';
+
 
 @Component({
   selector: 'app-credit',
@@ -10,7 +10,7 @@ import { faBook } from '@fortawesome/free-solid-svg-icons';
 })
 export class CreditComponent implements OnInit {
   creditNumber!: number;
-  faBook = faBook;
+
 
   constructor(private _snackBar: MatSnackBar) {
   }
